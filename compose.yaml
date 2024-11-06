@@ -1,0 +1,5 @@
+# Docker Compose version v2.29.7
+services:
+  yolo11-xview:
+    image: yolo11-xview
+    build: .
