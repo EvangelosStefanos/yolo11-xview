@@ -1,3 +1,4 @@
 # ultralytics tensorboard
+numpy==1.23.0
 ultralytics
 tensorboard

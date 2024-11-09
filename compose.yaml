@@ -3,3 +3,10 @@ services:
   yolo11-xview:
     image: yolo11-xview
     build: .
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

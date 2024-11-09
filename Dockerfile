@@ -1,20 +1,16 @@
 # Docker version 27.3.1
-FROM python:3.9
+FROM ultralytics/ultralytics:8.3.28
 
-RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
+COPY datasets/ /datasets/
 
 WORKDIR /app
 
-COPY requirements.txt requirements.txt
+COPY src/prepare_xView_data.py src/prepare_xView_data.py
 
-RUN pip install -r requirements.txt
+RUN python src/prepare_xView_data.py
 
-RUN pip freeze > reqs.txt
+COPY config/ config/
 
-COPY src/ src/
-
-COPY datasets/ datasets/
-
-EXPOSE 80/tcp
+COPY src/main.py src/main.py
 
 CMD [ "python", "src/main.py" ]
