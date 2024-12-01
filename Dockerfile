@@ -5,7 +5,7 @@ COPY datasets/xview_chipped /datasets/xview_chipped/
 
 WORKDIR /app
 
-COPY src/main.py src/main.py
+COPY src src
 
 # COPY outputs/app/latest latest
 

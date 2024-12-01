@@ -1,0 +1,9 @@
+# Docker Compose version v2.29.7
+services:
+  yolo-viewer:
+    image: yolo-viewer
+    build: .
+    ports:
+      - 6006:6006
+    volumes:
+      - ../outputs:/app/outputs
