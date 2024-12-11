@@ -3,10 +3,15 @@ services:
   yolo11-xview:
     image: yolo11-xview
     build: .
+    volumes:
+      - ./datasets:/datasets:ro
+      - latest:/app/latest
     deploy:
       resources:
         reservations:
           devices:
             - driver: nvidia
               count: 1
-              capabilities: [gpu]
+              capabilities: [ gpu ]
+volumes:
+  latest:
