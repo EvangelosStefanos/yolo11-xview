@@ -6,4 +6,4 @@ services:
     ports:
       - 6006:6006
     volumes:
-      - ../outputs:/app/outputs
+      - ../outputs:/app/outputs:ro
